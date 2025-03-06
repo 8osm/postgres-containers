@@ -10,7 +10,7 @@ on:
       EXTENSIONS:
         description: 'Postgres extensions to install'
         required: true
-        default: 'set-user'
+        default: 'set-user pg-stat-kcache'
 jobs:
   build:
     runs-on: ubuntu-latest
