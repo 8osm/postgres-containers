@@ -6,15 +6,11 @@ on:
       PG_VERSION:
         description: 'Postgres version'
         required: true
-        default: '15.3'
+        default: '15'
       EXTENSIONS:
         description: 'Postgres extensions to install'
         required: true
-        default: 'cron timescaledb'
-      TIMESCALEDB_VERSION:
-        description: 'TimescaleDB version'
-        required: true
-        default: '2.11.0'
+        default: 'set-user'
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -50,4 +46,3 @@ jobs:
         build-args: |
           POSTGRESQL_VERSION=${{ github.event.inputs.PG_VERSION }}
           EXTENSIONS=${{ github.event.inputs.EXTENSIONS }}
-          TIMESCALEDB_VERSION=${{ github.event.inputs.TIMESCALEDB_VERSION }}
